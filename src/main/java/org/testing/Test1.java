@@ -1,5 +1,5 @@
 package org.testing;
-import org.junit.Test;
+import org.testng.annotations.Test;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -11,7 +11,7 @@ import java.net.URL;
 /**
  * Web page testing class.
  * @version 1.0.0
- * @autor TaronJarahyan
+ * @autor TaronJarahian
  */
 public class Test1 {
 
