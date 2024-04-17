@@ -27,11 +27,10 @@ public class Test3 {
 
     /**
      * Главный метод является точкой входа в программу на Java.
-     * Запускает браузер, переходит на веб-сайт, кликает по различным вкладкам.
+     * Запускает браузер и кликает по различным вкладкам.
      *
      * @param args an array of Strings containing command-line arguments
      */
-
 
 
     public static void main(String[] args) {
