@@ -26,15 +26,6 @@
    <li>Install JDK with default settings</li>
 </ul>
 
-<h3>Set the variable "Java Home"</h3>
-<p>If you are using Windows, follow these steps to set the JAVA_HOME variable:</p>
-<ol>
-   <li>Press <code>Win+R</code>, then type <code>sysdm.cpl</code> and go to the 'Advanced' tab/Environment Variables.</li>
-   <li>Create a new user variable: <code>JAVA_HOME</code>.</li>
-   <li>Set the Variable value to the path where Java is installed (e.g., <code>C:\Program Files\Java\jdk*.*.*_**</code>).</li>
-   <li>Add the <code>bin</code> directory path to the variable <code>PATH</code> (e.g., <code>C:\Program Files\Java\jdk*.*.*_**\bin</code>).</li>
-   <li>After setting the variable, restart your computer.</li>
-</ol>
 
 <p>Once you have completed these steps, you can check if Java is installed correctly by opening a cmd console and running the following commands:</p>
 <code>java -version</code><br>
@@ -45,7 +36,7 @@
 <h2>Loading the Selenium Java Client Driver</h2>
 <p>You can download the Selenium Java Client Driver by going to the <a href="https://www.selenium.dev/downloads/">Selenium Java Client Driver Download Page</a>. On this page, you will find a list of client drivers for other languages, but you should select the driver for Java.</p>
 
-<p>Once you download the driver, it will come as a file named <code>selenium-server-standalone-3.141.59.jar</code>. For simplicity, extract the contents of this file to a directory on your disk, such as <code>C:\selenium\</code>.</p>
+<p>Once you download the driver, it will come as a file named. For simplicity, extract the contents of this file to a directory on your disk, such as  <code>C:\selenium-server\selenium-server-4.19.1.jar</code>.</p>
 
 <h2>Browser Driver Installation (Windows)</h2>
 <p>Let's describe an example of installing a browser driver. To install the Chrome driver, follow these steps:</p>
@@ -53,16 +44,15 @@
    <li>Open the website: <a href="https://googlechromelabs.github.io/chrome-for-testing/">Chrome Driver Download Page</a></li>
    <li>Download the Chrome driver version that matches your Chrome browser version.</li>
    <li>To find out your Chrome browser version, open a new window in Chrome and type <code>chrome://version/</code> in the search bar.</li>
-   <li>Unzip the downloaded file and place the unzipped folder containing the driver executable (e.g., <code>chromedriver.exe</code>) in a folder on your disk (e.g., <code>C:\webdrivers\</code>).</li>
-   <li>Add the folder path (<code>C:\webdrivers\</code>) to the system variable <code>PATH</code>.</li>
+   <li>Unzip the downloaded file and place the unzipped folder containing the driver executable in a folder on your disk <code>C:\webdrivers\chromedriver.exe</code>.</li>
 </ol>
 
-<h2>Starting Selenium Server Standalone</h2>
-<p>To launch the Selenium Server Standalone, follow these steps:</p>
+<h2>Starting Selenium Server</h2>
+<p>To launch the Selenium Server, follow these steps:</p>
 <ol>
    <li>Open the command line by typing <code>cmd</code> in the search.</li>
-   <li>Change directory to where the Selenium Server JAR file is located. For example, <code>cd C:\selenium</code>.</li>
-   <li>Run the command to start the Selenium Hub: <code>java -jar selenium-server-standalone-3.141.59.jar -role hub</code>.</li>
+   <li>Change directory to where the Selenium Server JAR file is located. For example, <code>cd C:\selenium-server</code>.</li>
+   <li>Run the command to start the Selenium Hub: <code>java -jar selenium-server-4.19.1.jar hub</code>.</li>
 </ol>
 
 <p>Selenium Grid is a tool that distributes tests on multiple physical or virtual machines so scripts can be executed in parallel. It consists of a Hub (server acting as a central point) and Nodes (machines that perform tests). There is only one Hub in Selenium Grid and it starts running on one machine.</p>
