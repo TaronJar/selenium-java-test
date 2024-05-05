@@ -1,98 +1,163 @@
-<div style="display:flex; align-items:center; justify-content:center; text-align:center;">
-    <div style="flex:1;">
-        <img src="https://github.com/TaronJar/selenium-java-test/assets/144931263/416dc78a-36ef-4c55-a83e-079b2bac1700" alt="icon" width="200">
-    </div>
-    <div style="flex:2;">
-        <h2><b>What is Selenium</b></h2>
-        <p><b>Selenium</b> is a set of open source programs that are used for testing web applications and administering sites locally and online. Selenium programs allow you to automate browser actions. Among the project programs, Selenium Software is not just a tool, but a software package (a set of tools), each part of which meets different needs in testing. Here is a list of tools included in Selenium Software:</p>
-        <ul style="list-style-type: disc;">
-            <li><b><a href="https://www.selenium.dev/documentation/ide/">Selenium IDE</a></b> is a plugin for recording user actions in the browser.</li>
-            <li><b><a href="https://www.selenium.dev/documentation/webdriver/">Selenium WebDriver</a></b> is a library for managing browsers.</li>
-            <li><b><a href="https://www.selenium.dev/documentation/grid/">Selenium Grid</a></b> is a cluster of Selenium servers for managing browsers on different computers on the network.</li>
-        </ul>
-    </div>
-</div>
+# Автоматизированное тестирование с помощью Selenium
 
-<h2>Installing IntelliJ IDEA</h2>
-<ul>
-   <li>Download <a href="https://www.jetbrains.com/ru-ru/idea/">IntelliJ IDEA</a> from the official website</li>
-   <li>Install IntelliJ IDEA with default settings</li>
-</ul>
+---
+<img src="https://upload.wikimedia.org/wikipedia/commons/9/9f/Selenium_logo.svg" alt="seleniumLogo" width="200"/>
 
-<h2>Installing JDK (Java Development Kit)</h2>
-<p>The JDK is a full-featured development kit. It is a set of software for developing applications, including Java runtime environment, compilers and tools (such as JavaDoc and Java Debugger), which are necessary for creating and compiling programs. If you want to run Java programs in your browser or computer, having the Java Runtime Environment (JRE) installed is enough. But if you plan to develop Java programs using IntelliJ IDEA, you will also need the JDK.</p>
-<ul>
-   <li>Download JDK from the <a href="https://www.oracle.com/java/technologies/downloads/">official Oracle website</a></li>
-   <li>Install JDK with default settings</li>
-</ul>
+**Selenium** - это набор инструментов и библиотек для
+автоматизации тестирования веб-приложений.
+С помощью Selenium можно создавать и запускать автоматизированные тесты,
+которые взаимодействуют с веб-браузером так, как это делает пользователь.
+
+**Основные компоненты Selenium включают:**
+
+- <a href="https://www.selenium.dev/documentation/ide/">Selenium IDE</a> -
+  Интегрированная среда разработки для создания скриптов тестирования визуальным способом
+  без необходимости программирования.
+
+- <a href="https://www.selenium.dev/documentation/webdriver/">Selenium WebDriver</a> -
+  Позволяет управлять браузером и выполнить различные действия на веб-страницах, такие как: Ввод текста,
+  нажатие кнопок, переход по ссылкам и многое
+  другое.
+
+- <a href="https://www.selenium.dev/documentation/grid/">Selenium Grid</a> -
+  Инструмент для распределенного тестирования, который позволяет запускать тесты параллельно на нескольких машинах и
+  браузерах.
 
 
-<p>Once you have completed these steps, you can check if Java is installed correctly by opening a cmd console and running the following commands:</p>
-<code>java -version</code><br>
-<code>javac -version</code>
 
-<p>If you see the Java version in the console, then Java is installed successfully.</p>
+## Установка среды IntelliJ IDEA <img src="https://upload.wikimedia.org/wikipedia/commons/9/9c/IntelliJ_IDEA_Icon.svg" width="20">
 
-<h2>Loading the Selenium Java Client Driver</h2>
-<p>You can download the Selenium Java Client Driver by going to the <a href="https://www.selenium.dev/downloads/">Selenium Java Client Driver Download Page</a>. On this page, you will find a list of client drivers for other languages, but you should select the driver for Java.</p>
+---
 
-<p>Once you download the driver, it will come as a file named. For simplicity, extract the contents of this file to a directory on your disk, such as  <code>C:\selenium-server\selenium-server-4.19.1.jar</code>.</p>
+**IntelliJ IDEA** - это интегрированная среда разработки (IDE) для различных языков программирования, разработанная
+компанией JetBrains. IntelliJ IDEA предоставляет разработчикам мощные инструменты для создания программного обеспечения,
+улучшения производительности и удобства в процессе разработки.
 
-<h2>Browser Driver Installation (Windows)</h2>
-<p>Let's describe an example of installing a browser driver. To install the Chrome driver, follow these steps:</p>
-<ol>
-   <li>Open the website: <a href="https://googlechromelabs.github.io/chrome-for-testing/">Chrome Driver Download Page</a></li>
-   <li>Download the Chrome driver version that matches your Chrome browser version.</li>
-   <li>To find out your Chrome browser version, open a new window in Chrome and type <code>chrome://version/</code> in the search bar.</li>
-   <li>Unzip the downloaded file and place the unzipped folder containing the driver executable in a folder on your disk <code>C:\webdrivers\chromedriver.exe</code>.</li>
-</ol>
+1. Перейдите на [официальный сайт IntelliJ IDEA](https://www.jetbrains.com/idea/download/) и загрузите установщик IDE
+   для
+   Windows.
 
-<h2>Starting Selenium Server</h2>
-<p>To launch the Selenium Server, follow these steps:</p>
-<ol>
-   <li>Open the command line by typing <code>cmd</code> in the search.</li>
-   <li>Change directory to where the Selenium Server JAR file is located. For example, <code>cd C:\selenium-server</code>.</li>
-   <li>Run the command to start the Selenium Hub: <code>java -jar selenium-server-4.19.1.jar hub</code>.</li>
-</ol>
+2. Запустите скачанный установочный файл.
 
-<p>Selenium Grid is a tool that distributes tests on multiple physical or virtual machines so scripts can be executed in parallel. It consists of a Hub (server acting as a central point) and Nodes (machines that perform tests). There is only one Hub in Selenium Grid and it starts running on one machine.</p>
-<p>Nodes are instances attached to the Hub and perform tests. You can have multiple nodes with different configurations and browsers. Start the hub with the command mentioned above and make sure it is running successfully. You can access the Selenium Grid Hub's console at <a href="http://localhost:4444/grid/">http://localhost:4444/grid/</a>.</p>
+3. Следуйте инструкциям мастера установки, выбрав необходимые параметры (путь установки, язык интерфейса и прочее).
 
-<p>To start a Node, use the following command:</p>
-<code>java -Dwebdriver.chrome.driver="C:\chromedriver\chromedriver.exe" -jar C:\selenium-server-standalone-3.141.59.jar -role node -hub http://192.168.99.1:4444/grid/register/</code>
+4. После завершения установки запустите IntelliJ IDEA, введите или активируйте лицензионный ключ (если у вас есть),
+   создайте или импортируйте проект и начните работу.
 
-<p>Check the state of the Selenium Hub and view the connected nodes with browsers available by visiting the Selenium Grid Hub console.</p>
-<p>You can access the Selenium Grid Hub Console at: <a href="http://192.168.99.1:4444/">http://192.168.99.1:4444/</a></p>
-<p>From the console, you can see the connected nodes and the browsers available for testing. The default configuration may include Chrome, Firefox, and IE browsers.</p>
+## Установка JDK (Java Development Kit) <img src="https://icon-icons.com/icons2/2108/PNG/512/java_icon_130901.png" width="20">
 
-<h2>Connecting Selenium to IntelliJ IDEA</h2>
-<p>To connect Selenium to your IntelliJ IDEA project, follow these steps:</p>
-<ol>
-   <li>Open your IntelliJ IDEA project.</li>
-   <li>Go to File -> Project Structure -> Modules.</li>
-   <li>Click on the '+' icon and select 'JARs or directories'.</li>
-   <li>Navigate to the location where you extracted the Selenium Java Client Driver (e.g., <code>C:\selenium\selenium-server-standalone-3.141.59.jar</code>) and select the JAR file.</li>
-   <li>Click 'Apply' and then 'OK' to add Selenium to your project.</li>
-</ol>
+---
 
-<p>Now you can start writing Selenium test scripts in your IntelliJ IDEA project and begin automating your browser testing.</p>
+**JDK (Java Development Kit)** - это пакет разработки Java, который включает в себя все необходимые инструменты и
+библиотеки
+для разработки, компиляции, отладки и выполнения Java-приложений.
 
-<h2>Simple Test</h2>
-<p>To create a simple test using Selenium and Java in IntelliJ IDEA, follow these steps:</p>
+1. Перейдите на [официальный сайт Oracle JDK](https://www.oracle.com/java/technologies/javase-jdk15-downloads.html) и
+   загрузите установщик JDK для Windows.
 
-<ol>
-   <li>Inside your IntelliJ IDEA project, create a new Java class for your test.</li>
-   <li>Import the necessary Selenium classes at the top of your class:</li>
-   <pre><code>import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;</code></pre>
-   <li>In the main method of your class, set the path to the ChromeDriver and create a new instance of the WebDriver:</li>
-   <pre><code>System.setProperty("webdriver.chrome.driver", "C:\webdrivers\chromedriver.exe");
-WebDriver driver = new ChromeDriver();</code></pre>
-   <li>Navigate to a website in the browser using the driver:</li>
-   <pre><code>driver.get("https://www.example.com");</code></pre>
-   <li>Perform actions on the webpage using Selenium commands, such as finding elements, clicking buttons, or entering text.</li>
-   <li>Close the browser window at the end of your test:</li>
-   <pre><code>driver.quit();</code></pre>
-</ol>
+2. Запустите скачанный установщик и следуйте инструкциям по установке, выбирая путь установки и другие опции на ваш
+   выбор.
 
-<p>By following these steps, you have created a simple test script using Selenium and Java in IntelliJ IDEA. You can run this test to automate actions on a website and verify the functionality of your web application.</p>
+3. После завершения установки JDK, вы можете проверить версию JDK и наличие Java Development Kit на вашем компьютере,
+   запустив команду `java -version` в командной строке.
+4. Если JDK установлен успешно, она отобразит версию вашей установленной JDK.
+
+
+
+## Установка и настройка библиотеки Selenium Java <img src="https://img.icons8.com/?size=256&id=VOnRj9vGpXV8&format=png" width="20">
+
+---
+
+#### С помощью Maven
+
+1. Откройте файл `pom.xml` вашего проекта и добавьте зависимость Selenium Java в
+   блок `<dependencies>`:
+
+        <dependency>
+           <groupId>org.seleniumhq.selenium</groupId>
+           <artifactId>selenium-java</artifactId>
+           <version>4.19.1</version> <!-- Укажите актуальную версию -->
+           </dependency>
+
+2. Сохраните файл `pom.xml`, чтобы Maven автоматически загрузил и добавил Selenium Java в проект.
+
+#### С помощью Project Structure
+
+1. Скачайте актуальную Selenium Java-библиотеку с [официального сайта Selenium](https://www.selenium.dev/downloads/) и
+   распакуйте в
+   удобную вам папку.
+2. Откройте ваш проект в IntelliJ IDEA.
+3. Нажмите на `File` в верхнем меню IntelliJ IDEA, затем выберите `Project Structure`.
+4. Открыть вкладку`Modules` а затем выбрать перейти в раздел `Dependencies`.
+5. Нажать на символ `+`, после чего выбрать опцию `JARs or directories`.
+6. Выбрать директорию, куда сохранили загруженную библиотеки Selenium и нажать `OK`.
+
+## Установка WebDriver (Chrome) <img src="https://www.svgrepo.com/show/303566/chrome-7-logo.svg" width="20">
+
+---
+
+1. Перейдите на [официальный сайт ChromeLabs](https://googlechromelabs.github.io/chrome-for-testing/)
+2. Из появившегося списка, выберите и загрузите стабильную версию драйвера (версия браузера и веб-драйвера должны
+   совпадать)
+3. Распакуйте драйвер в удобное для вас место.
+
+
+
+## Быстрая Установка и настройка Selenium Server (Grid) <img src="https://air.imag.fr/images/7/73/Selenium_Grid_Logo.png" width="20">
+
+---
+
+1. Скачайте актуальную версию Selenium Server
+   с [официального сайта Selenium](https://www.selenium.dev/downloads/).
+2. Поместите файлы `selenium-server-4.19.1.jar` и `chromedriver.exe` в одну папку на вашем компьютере.
+3. Создайте текстовый документ и откройте его для редактирования.
+4. Вставьте следующие команды в текстовый документ:
+
+**Для запуска Hub:**
+
+`java -jar selenium-server-4.19.1.jar hub`
+
+**Для запуска узла (Node) с использованием WebDriver:**
+
+`java -jar selenium-server-4.19.1.jar node --selenium-manager true`
+
+5. Сохраните текстовый документ с расширением `.bat` (например, `start_selenium.bat`).
+6. Поместите этот файл в ту же папку, где находятся `selenium-server-4.19.1.jar` и `chromedriver.exe`.
+7. Запустите файл `.bat`, чтобы запустить Selenium Server с Hub и Node.
+
+
+## Простой тест
+
+---
+
+Для создания простого теста с использованием Selenium и Java в IntelliJ IDEA, выполните следующие шаги:
+
+1. Внутри вашего проекта IntelliJ IDEA создайте новый Java-класс для вашего теста.
+
+2. Импортируйте необходимые классы Selenium в начале вашего класса:
+
+        java
+        import org.openqa.selenium.WebDriver;
+        import org.openqa.selenium.chrome.ChromeDriver;
+
+3. В методе `main` вашего класса задайте путь к `ChromeDriver` и создайте новый экземпляр `WebDriver`:
+
+        java
+        System.setProperty("webdriver.chrome.driver", "C:\\webdrivers\\chromedriver.exe");
+         WebDriver driver = new ChromeDriver();
+
+4. Укажите ссылку на веб-сайт, используя объект driver:
+
+        java
+        driver.get("https://www.example.com");
+
+5. Выполните действия на веб-странице с помощью команд Selenium, таких как поиск элементов, нажатие кнопок или ввод
+   текста.
+
+6. Закройте окно браузера по окончании вашего теста:
+
+         java 
+         driver.quit();
+
+Следуя этим шагам, вы создали простой тестовый скрипт, используя Selenium и Java в IntelliJ IDEA. Вы можете запустить
+этот тест, чтобы автоматизировать действия на веб-сайте и проверить функциональность вашего веб-приложения.
