@@ -1,6 +1,6 @@
 # Автоматизированное тестирование с помощью Selenium
 
----
+
 <img src="https://upload.wikimedia.org/wikipedia/commons/9/9f/Selenium_logo.svg" alt="seleniumLogo" width="200"/>
 
 **Selenium** - это набор инструментов и библиотек для
@@ -27,7 +27,7 @@
 
 ## Установка среды IntelliJ IDEA <img src="https://upload.wikimedia.org/wikipedia/commons/9/9c/IntelliJ_IDEA_Icon.svg" width="20">
 
----
+
 
 **IntelliJ IDEA** - это интегрированная среда разработки (IDE) для различных языков программирования, разработанная
 компанией JetBrains. IntelliJ IDEA предоставляет разработчикам мощные инструменты для создания программного обеспечения,
@@ -46,7 +46,7 @@
 
 ## Установка JDK (Java Development Kit) <img src="https://icon-icons.com/icons2/2108/PNG/512/java_icon_130901.png" width="20">
 
----
+
 
 **JDK (Java Development Kit)** - это пакет разработки Java, который включает в себя все необходимые инструменты и
 библиотеки
@@ -66,7 +66,7 @@
 
 ## Установка и настройка библиотеки Selenium Java <img src="https://img.icons8.com/?size=256&id=VOnRj9vGpXV8&format=png" width="20">
 
----
+
 
 #### С помощью Maven
 
@@ -94,7 +94,7 @@
 
 ## Установка WebDriver (Chrome) <img src="https://www.svgrepo.com/show/303566/chrome-7-logo.svg" width="20">
 
----
+
 
 1. Перейдите на [официальный сайт ChromeLabs](https://googlechromelabs.github.io/chrome-for-testing/)
 2. Из появившегося списка, выберите и загрузите стабильную версию драйвера (версия браузера и веб-драйвера должны
@@ -105,7 +105,7 @@
 
 ## Быстрая Установка и настройка Selenium Server (Grid) <img src="https://air.imag.fr/images/7/73/Selenium_Grid_Logo.png" width="20">
 
----
+
 
 1. Скачайте актуальную версию Selenium Server
    с [официального сайта Selenium](https://www.selenium.dev/downloads/).
@@ -128,7 +128,7 @@
 
 ## Простой тест
 
----
+
 
 Для создания простого теста с использованием Selenium и Java в IntelliJ IDEA, выполните следующие шаги:
 
