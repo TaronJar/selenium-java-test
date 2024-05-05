@@ -35,7 +35,7 @@ public class Test2 {
     public static void main(String[] args) {
 
         // Устанавливаем путь к драйверу Chrome
-        System.setProperty("webdriver.chrome.driver", "C:\\chromedriver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\selenium-server\\chromedriver.exe");
         WebDriver driver = new ChromeDriver(); // Создаем новый экземпляр WebDriver для Chrome
         driver.manage().window().maximize();   // Максимизируем окно браузера
         driver.get("https://muztema.ru");      // Открываем главную страницу сайта
