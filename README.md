@@ -103,7 +103,7 @@
 
 
 
-## Быстрая установка и настройка Selenium Server (Grid) <img src="https://air.imag.fr/images/7/73/Selenium_Grid_Logo.png" width="20">
+## Установка и легкая настройка Selenium Server (Grid) <img src="https://air.imag.fr/images/7/73/Selenium_Grid_Logo.png" width="20">
 
 
 
