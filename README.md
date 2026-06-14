@@ -1,56 +1,56 @@
-# Selenium Java Test
+<div align="center">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/9/9f/Selenium_logo.svg" alt="Selenium" width="120"/>
+  <img src="https://upload.wikimedia.org/wikipedia/en/3/30/Java_logo.svg" alt="Java" width="90"/>
+  <br/>
+  <h1>Selenium Java Test</h1>
+  <p>Современный пример автоматизированного тестирования веб-приложений</p>
 
-Пример автоматизированного тестирования веб-приложений с использованием **Selenium WebDriver**, **JUnit 5** и **WebDriverManager**.
+  [![Java](https://img.shields.io/badge/Java-17-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)](https://adoptium.net/)
+  [![Selenium](https://img.shields.io/badge/Selenium-4.30-43B02A?style=for-the-badge&logo=selenium&logoColor=white)](https://www.selenium.dev/)
+  [![JUnit](https://img.shields.io/badge/JUnit-5.12-25A162?style=for-the-badge&logo=junit5&logoColor=white)](https://junit.org/junit5/)
+  [![Maven](https://img.shields.io/badge/Maven-3.8-C71A36?style=for-the-badge&logo=apachemaven&logoColor=white)](https://maven.apache.org/)
+  [![License](https://img.shields.io/badge/License-MIT-303030?style=for-the-badge&logo=opensourceinitiative&logoColor=white)](LICENSE)
 
----
+  <hr/>
+</div>
 
-## Стек технологий
+## О проекте
 
-| Инструмент | Назначение |
-|---|---|
-| **Java 17** | Язык программирования |
-| **Selenium WebDriver 4.30** | Управление браузером |
-| **JUnit 5.12** | Фреймворк для тестирования |
-| **WebDriverManager 5.9** | Автоматическое управление драйверами браузеров |
-| **Maven** | Сборка и управление зависимостями |
+Учебный проект, демонстрирующий современные подходы к автоматизации тестирования.  
+Написан на **Java 17** с использованием **Selenium WebDriver**, **JUnit 5** и **WebDriverManager**.
 
----
+### Возможности
 
-## Структура проекта
-
-```
-selenium-java-test/
-├── pom.xml                          # Зависимости и конфигурация сборки
-├── src/
-│   └── test/java/org/testing/selenium/
-│       ├── BaseTest.java            # Базовый класс с настройкой WebDriver
-│       ├── WebSearchTest.java       # Параметризованные поисковые тесты
-│       ├── NavigationTest.java      # Тесты навигации и ссылок
-│       ├── WaitsTest.java           # Демонстрация WebDriverWait и FluentWait
-│       └── WindowManagementTest.java# Управление вкладками и JavaScript
-```
+- ✅ Автоматическое управление драйверами браузеров (никаких ручных скачиваний)
+- ✅ Параметризованные тесты с `@ValueSource`
+- ✅ Явные ожидания (`WebDriverWait`) и FluentWait
+- ✅ Работа с вкладками и выполнение JavaScript
+- ✅ Готов к CI/CD (GitHub Actions, Jenkins)
 
 ---
 
 ## Быстрый старт
 
-### Требования
+### Предварительные требования
 
-- Java 17 или выше
-- Maven 3.8+
-- Google Chrome (последняя версия)
+- ☕ **Java 17** или выше — [скачать](https://adoptium.net/)
+- 📦 **Maven 3.8+** — [скачать](https://maven.apache.org/download.cgi)
+- 🌐 **Google Chrome** — последняя стабильная версия
 
-### Запуск
+### Установка и запуск
 
 ```bash
+# Клонирование
 git clone https://github.com/TaronJar/selenium-java-test.git
 cd selenium-java-test
+
+# Запуск всех тестов
 mvn clean test
 ```
 
-WebDriverManager сам скачает подходящий ChromeDriver — ничего устанавливать вручную не нужно.
+Всё! WebDriverManager автоматически загрузит подходящую версию ChromeDriver.
 
-### Запуск одного теста
+### Запуск конкретного теста
 
 ```bash
 mvn test -Dtest=NavigationTest
@@ -58,30 +58,110 @@ mvn test -Dtest=NavigationTest
 
 ---
 
-## Описание тестов
+## Структура проекта
 
-### BaseTest
-Абстрактный базовый класс. Настраивает ChromeDriver через WebDriverManager, максимизирует окно перед каждым тестом и закрывает браузер после.
+```
+selenium-java-test/
+├── pom.xml
+├── src/
+│   └── test/java/org/testing/selenium/
+│       ├── BaseTest.java              # Конфигурация WebDriver
+│       ├── WebSearchTest.java         # Поисковые тесты
+│       ├── NavigationTest.java        # Тесты навигации
+│       ├── WaitsTest.java             # Демонстрация ожиданий
+│       └── WindowManagementTest.java  # Вкладки и JS
+```
 
-### WebSearchTest
-Параметризованный тест (`@ValueSource`). Ищет в Google разные запросы и проверяет заголовок страницы результатов.
+---
 
-### NavigationTest
-Открывает selenium.dev, проверяет URL и заголовок, переходит по ссылке на страницу загрузок.
+## Детальное описание тестов
 
-### WaitsTest
-Два подхода к ожиданиям:
-- **WebDriverWait** — явное ожидание до 10 секунд
-- **FluentWait** — кастомный интервал (500ms), игнорирование NoSuchElementException
+### 🧱 BaseTest.java
 
-### WindowManagementTest
-- Переключение между вкладками браузера
-- Выполнение JavaScript через JavascriptExecutor
+Базовый класс для всех тестов. Выполняет настройку перед каждым тестом и гарантированно закрывает браузер после:
+
+- Настройка ChromeOptions (полноэкранный режим)
+- Автоматическая загрузка ChromeDriver через WebDriverManager
+- Завершение WebDriver сессии в `@AfterEach`
+
+### 🔍 WebSearchTest.java
+
+Параметризованный тест, демонстрирующий `@ValueSource`:
+
+| Запрос | Что проверяется |
+|---|---|
+| `Selenium WebDriver` | Заголовок страницы результатов |
+| `Java 17` | Заголовок страницы результатов |
+| `JUnit 5` | Заголовок страницы результатов |
+
+Подход: ввод текста → отправка формы → ожидание загрузки → валидация.
+
+### 🧭 NavigationTest.java
+
+Два теста для проверки навигации:
+
+1. **Открытие страницы** — проверка URL и title
+2. **Переход по ссылке** — ожидание кликабельности → клик → проверка URL
+
+### ⏳ WaitsTest.java
+
+Демонстрация двух стратегий ожидания:
+
+- **WebDriverWait** — явное ожидание до 10 секунд (рекомендуемый подход)
+- **FluentWait** — опрос каждые 500ms, игнорирование `NoSuchElementException`
+
+Разница: FluentWait даёт тонкий контроль над частотой опроса и игнорируемыми исключениями.
+
+### 🪟 WindowManagementTest.java
+
+1. **Переключение вкладок** — открытие новой вкладки, `switchTo()`, подсчёт `windowHandles`
+2. **JavaScript** — получение `document.title` через `JavascriptExecutor`
+
+---
+
+## Зависимости (pom.xml)
+
+| Артефакт | Версия | Назначение |
+|---|---|---|
+| `selenium-java` | 4.30.0 | Управление браузером |
+| `junit-jupiter` | 5.12.1 | Тестовый фреймворк |
+| `webdrivermanager` | 5.9.2 | Авто-управление драйверами |
+| `maven-surefire-plugin` | 3.5.2 | Запуск тестов |
+
+---
+
+## Интеграция с CI/CD
+
+### GitHub Actions
+
+```yaml
+name: Tests
+on: [push]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          java-version: 17
+          distribution: temurin
+      - run: mvn clean test
+```
 
 ---
 
 ## Полезные ссылки
 
-- [Selenium Documentation](https://www.selenium.dev/documentation/)
-- [JUnit 5 User Guide](https://junit.org/junit5/docs/current/user-guide/)
-- [WebDriverManager](https://github.com/bonigarcia/webdrivermanager)
+| Ресурс | Ссылка |
+|---|---|
+| 📖 Документация Selenium | [selenium.dev](https://www.selenium.dev/documentation/) |
+| 📖 Руководство JUnit 5 | [junit.org](https://junit.org/junit5/docs/current/user-guide/) |
+| 📖 WebDriverManager | [bonigarcia/webdrivermanager](https://github.com/bonigarcia/webdrivermanager) |
+| 📖 Maven Surefire | [maven.apache.org](https://maven.apache.org/surefire/maven-surefire-plugin/) |
+
+---
+
+<div align="center">
+  <sub>Сделано с ❤️ для изучения автоматизации тестирования</sub>
+</div>
