@@ -1,7 +1,6 @@
 <div align="center">
   <img src="https://upload.wikimedia.org/wikipedia/commons/9/9f/Selenium_logo.svg" alt="Selenium" height="100" style="margin: 0 20px;"/>
   <br/>
-  <h1>Selenium Java Test</h1>
   <p>Современный пример автоматизированного тестирования веб-приложений</p>
 
   [![Java](https://img.shields.io/badge/Java-21-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)](https://adoptium.net/)
