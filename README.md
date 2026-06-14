@@ -57,7 +57,10 @@ mvn test -Dtest=NavigationTest
 
 ---
 
-## 🖥️ Установка и запуск в IntelliJ IDEA
+<details>
+<summary><b>🖥️ Установка и запуск в IntelliJ IDEA</b></summary>
+
+<br/>
 
 Самый простой способ для новичка.
 
@@ -96,9 +99,12 @@ mvn test -Dtest=NavigationTest
 
 ✅ Если тесты прошли — всё работает!
 
----
+</details>
 
-## 🖥️ Установка и запуск в VS Code
+<details>
+<summary><b>🖥️ Установка и запуск в VS Code</b></summary>
+
+<br/>
 
 ### Шаг 1. Установить VS Code
 
@@ -130,9 +136,12 @@ mvn test -Dtest=NavigationTest
 - Открыть `NavigationTest.java`
 - Нажать **Run** (или Ctrl+F5)
 
----
+</details>
 
-## ❓ Возможные проблемы
+<details>
+<summary><b>❓ Возможные проблемы</b></summary>
+
+<br/>
 
 | Проблема | Решение |
 |---|---|
@@ -141,9 +150,12 @@ mvn test -Dtest=NavigationTest
 | `ChromeDriver error` | Убедись, что Google Chrome установлен. WebDriverManager подберёт драйвер сам |
 | Зависимости не скачались | `mvn clean install -U` — принудительно обновить |
 
----
+</details>
 
-## Структура проекта
+<details>
+<summary><b>📁 Структура проекта</b></summary>
+
+<br/>
 
 ```
 selenium-java-test/
@@ -157,9 +169,12 @@ selenium-java-test/
 │       └── WindowManagementTest.java  # Вкладки и JS
 ```
 
----
+</details>
 
-## Детальное описание тестов
+<details>
+<summary><b>🧪 Детальное описание тестов</b></summary>
+
+<br/>
 
 ### 🧱 BaseTest.java
 
@@ -202,9 +217,12 @@ selenium-java-test/
 1. **Переключение вкладок** — открытие новой вкладки, `switchTo()`, подсчёт `windowHandles`
 2. **JavaScript** — получение `document.title` через `JavascriptExecutor`
 
----
+</details>
 
-## Зависимости (pom.xml)
+<details>
+<summary><b>📦 Зависимости (pom.xml)</b></summary>
+
+<br/>
 
 | Артефакт | Версия | Назначение |
 |---|---|---|
@@ -213,9 +231,12 @@ selenium-java-test/
 | `webdrivermanager` | 6.3.4 | Авто-управление драйверами |
 | `maven-surefire-plugin` | 3.5.6 | Запуск тестов |
 
----
+</details>
 
-## Интеграция с CI/CD
+<details>
+<summary><b>🔄 Интеграция с CI/CD</b></summary>
+
+<br/>
 
 ### GitHub Actions
 
@@ -233,6 +254,8 @@ jobs:
           distribution: temurin
       - run: mvn clean test
 ```
+
+</details>
 
 ---
 
