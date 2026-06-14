@@ -35,7 +35,7 @@
 - 📦 **Maven 3.8+** — [скачать](https://maven.apache.org/download.cgi)
 - 🌐 **Google Chrome** — [скачать](https://www.google.com/chrome/)
 
-### Установка и запуск
+### Установка и запуск (через терминал)
 
 ```bash
 # Клонирование
@@ -53,6 +53,92 @@ mvn clean test
 ```bash
 mvn test -Dtest=NavigationTest
 ```
+
+---
+
+## 🖥️ Установка и запуск в IntelliJ IDEA
+
+Самый простой способ для новичка.
+
+### Шаг 1. Скачать и установить IntelliJ IDEA
+
+1. Перейти на [jetbrains.com/idea/download](https://www.jetbrains.com/idea/download/)
+2. Скачать **Community Edition** (бесплатная)
+3. Установить, запустить
+
+### Шаг 2. Установить Java 21
+
+1. Перейти на [adoptium.net](https://adoptium.net/)
+2. Скачать **JDK 21 (LTS)** для своей ОС
+3. Установить
+
+### Шаг 3. Установить Maven
+
+1. Перейти на [maven.apache.org/download.cgi](https://maven.apache.org/download.cgi)
+2. Скачать **Binary zip archive** (apache-maven-3.9.x-bin.zip)
+3. Распаковать в любую папку (например, `C:\tools\apache-maven`)
+4. Добавить папку `bin` в системную переменную `PATH`
+
+### Шаг 4. Открыть проект
+
+1. Открыть IntelliJ IDEA
+2. Нажать **File → New → Project from Version Control**
+3. Вставить URL: `https://github.com/TaronJar/selenium-java-test.git`
+4. Нажать **Clone**
+5. IDEA сама обнаружит Maven-проект и скачает все зависимости (подождать)
+
+### Шаг 5. Запустить тест
+
+**Вариант A — через IDE:**
+- Открыть `src/test/java/org/testing/selenium/NavigationTest.java`
+- Нажать зелёную ▶ слева от названия класса
+- Выбрать **Run 'NavigationTest'**
+
+**Вариант B — через терминал внутри IDEA:**
+- Открыть встроенный терминал (Alt+F12)
+- Написать `mvn clean test`
+
+✅ Если тесты прошли — всё работает!
+
+---
+
+## 🖥️ Установка и запуск в VS Code
+
+### Шаг 1. Установить VS Code
+
+1. Перейти на [code.visualstudio.com](https://code.visualstudio.com/)
+2. Скачать и установить
+
+### Шаг 2. Установить Java 21 и Maven (как в инструкции выше)
+
+### Шаг 3. Установить расширения
+
+Открыть VS Code → вкладка **Extensions** (Ctrl+Shift+X) → установить:
+
+- **Extension Pack for Java** (Microsoft) — всё для Java
+- **Maven for Java** (Microsoft) — поддержка Maven
+
+### Шаг 4. Открыть проект
+
+1. **File → Open Folder**
+2. Выбрать папку `selenium-java-test`
+3. Подождать, пока VS Code загрузит зависимости
+
+### Шаг 5. Запустить тест
+
+- Открыть `NavigationTest.java`
+- Нажать **Run** (или Ctrl+F5)
+
+---
+
+## ❓ Возможные проблемы
+
+| Проблема | Решение |
+|---|---|
+| `Java not found` | Проверь, что Java 21 установлена: `java -version` в терминале |
+| `Maven not found` | Проверь Maven: `mvn --version`. Добавь `bin` в PATH |
+| `ChromeDriver error` | Убедись, что Google Chrome установлен. WebDriverManager подберёт драйвер сам |
+| Зависимости не скачались | `mvn clean install -U` — принудительно обновить |
 
 ---
 
@@ -157,6 +243,8 @@ jobs:
 | 📖 Руководство JUnit 5 | [junit.org](https://junit.org/junit5/docs/current/user-guide/) |
 | 📖 WebDriverManager | [bonigarcia/webdrivermanager](https://github.com/bonigarcia/webdrivermanager) |
 | 📖 Maven Surefire | [maven.apache.org](https://maven.apache.org/surefire/maven-surefire-plugin/) |
+| 📖 IntelliJ IDEA | [jetbrains.com/idea](https://www.jetbrains.com/idea/) |
+| 📖 VS Code | [code.visualstudio.com](https://code.visualstudio.com/) |
 
 ---
 
