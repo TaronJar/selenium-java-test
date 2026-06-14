@@ -87,7 +87,7 @@ mvn test -Dtest=NavigationTest
 
 **Вариант A — через IDE:**
 - Открыть `src/test/java/org/testing/selenium/NavigationTest.java`
-- Нажать зелёную ▶ слева от названия класса
+- Нажать зелёный треугольник (Run) слева от названия класса
 - Выбрать **Run 'NavigationTest'**
 
 **Вариант B — через терминал внутри IDEA:**
