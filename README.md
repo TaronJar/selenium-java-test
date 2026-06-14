@@ -35,7 +35,7 @@
 
 - ☕ **Java 21** или выше — [скачать](https://adoptium.net/)
 - 📦 **Maven 3.8+** — [скачать](https://maven.apache.org/download.cgi)
-- 🌐 **Google Chrome** — последняя стабильная версия
+- 🌐 **Google Chrome** — [скачать](https://www.google.com/chrome/)
 
 ### Установка и запуск
 
