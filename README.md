@@ -1,26 +1,29 @@
 <div align="center">
   <img src="https://upload.wikimedia.org/wikipedia/commons/9/9f/Selenium_logo.svg" alt="Selenium" height="100" style="margin: 0 20px;"/>
   <br/>
-  <p>{{ОПИСАНИЕ_ПРОЕКТА}}</p>
+  <p>Современный пример автоматизированного тестирования веб-приложений</p>
 
-  [![Java](https://img.shields.io/badge/Java-{{JAVA_VER}}-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)](https://adoptium.net/)
-  [![Selenium](https://img.shields.io/badge/Selenium-{{SELENIUM_VER}}-43B02A?style=for-the-badge&logo=selenium&logoColor=white)](https://www.selenium.dev/)
-  [![JUnit](https://img.shields.io/badge/JUnit-{{JUNIT_VER}}-25A162?style=for-the-badge&logo=junit5&logoColor=white)](https://junit.org/junit5/)
-  [![Maven](https://img.shields.io/badge/Maven-{{MAVEN_VER}}-C71A36?style=for-the-badge&logo=apachemaven&logoColor=white)](https://maven.apache.org/)
-  [![License](https://img.shields.io/badge/License-{{LICENSE}}-303030?style=for-the-badge&logo=opensourceinitiative&logoColor=white)](LICENSE)
+  [![Java](https://img.shields.io/badge/Java-21-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)](https://adoptium.net/)
+  [![Selenium](https://img.shields.io/badge/Selenium-4.44-43B02A?style=for-the-badge&logo=selenium&logoColor=white)](https://www.selenium.dev/)
+  [![JUnit](https://img.shields.io/badge/JUnit-5.14.4-25A162?style=for-the-badge&logo=junit5&logoColor=white)](https://junit.org/junit5/)
+  [![Maven](https://img.shields.io/badge/Maven-3.8-C71A36?style=for-the-badge&logo=apachemaven&logoColor=white)](https://maven.apache.org/)
+  [![License](https://img.shields.io/badge/License-MIT-303030?style=for-the-badge&logo=opensourceinitiative&logoColor=white)](LICENSE)
 
   <hr/>
 </div>
 
 ## О проекте
 
-{{DESCRIPTION}}
+Учебный проект, демонстрирующий современные подходы к автоматизации тестирования.  
+Написан на **Java 21 LTS** с использованием **Selenium WebDriver**, **JUnit 5** и **WebDriverManager**.
 
 ### Возможности
 
-- ✅ {{FEATURE_1}}
-- ✅ {{FEATURE_2}}
-- ✅ {{FEATURE_3}}
+- ✅ Автоматическое управление драйверами браузеров (никаких ручных скачиваний)
+- ✅ Параметризованные тесты с `@ValueSource`
+- ✅ Явные ожидания (`WebDriverWait`) и FluentWait
+- ✅ Работа с вкладками и выполнение JavaScript
+- ✅ Готов к CI/CD (GitHub Actions, Jenkins)
 
 ---
 
@@ -28,25 +31,27 @@
 
 ### Предварительные требования
 
-- ☕ **Java {{JAVA_VER}}** или выше — [скачать](https://adoptium.net/)
-- 📦 **Maven {{MAVEN_VER}}+** — [скачать](https://maven.apache.org/download.cgi)
+- ☕ **Java 21** или выше — [скачать](https://adoptium.net/)
+- 📦 **Maven 3.8+** — [скачать](https://maven.apache.org/download.cgi)
 - 🌐 **Google Chrome** — [скачать](https://www.google.com/chrome/)
 
 ### Установка и запуск
 
 ```bash
 # Клонирование
-git clone {{REPO_URL}}
-cd {{PROJECT_DIR}}
+git clone https://github.com/TaronJar/selenium-java-test.git
+cd selenium-java-test
 
 # Запуск всех тестов
 mvn clean test
 ```
 
+Всё! WebDriverManager автоматически загрузит подходящую версию ChromeDriver.
+
 ### Запуск конкретного теста
 
 ```bash
-mvn test -Dtest={{TestClassName}}
+mvn test -Dtest=NavigationTest
 ```
 
 ---
@@ -54,14 +59,15 @@ mvn test -Dtest={{TestClassName}}
 ## Структура проекта
 
 ```
-{{PROJECT_DIR}}/
+selenium-java-test/
 ├── pom.xml
 ├── src/
-│   └── test/java/{{BASE_PACKAGE_PATH}}/
+│   └── test/java/org/testing/selenium/
 │       ├── BaseTest.java              # Конфигурация WebDriver
-│       ├── {{TestClass1}}.java         # {{Описание}}
-│       ├── {{TestClass2}}.java         # {{Описание}}
-│       └── ...
+│       ├── WebSearchTest.java         # Поисковые тесты
+│       ├── NavigationTest.java        # Тесты навигации
+│       ├── WaitsTest.java             # Демонстрация ожиданий
+│       └── WindowManagementTest.java  # Вкладки и JS
 ```
 
 ---
@@ -72,13 +78,42 @@ mvn test -Dtest={{TestClassName}}
 
 Базовый класс для всех тестов. Выполняет настройку перед каждым тестом и гарантированно закрывает браузер после:
 
-- Настройка ChromeOptions
+- Настройка ChromeOptions (полноэкранный режим)
 - Автоматическая загрузка ChromeDriver через WebDriverManager
 - Завершение WebDriver сессии в `@AfterEach`
 
-### {{TestClass1}}.java
+### 🔍 WebSearchTest.java
 
-{{Описание тестового класса}}
+Параметризованный тест, демонстрирующий `@ValueSource`:
+
+| Запрос | Что проверяется |
+|---|---|
+| `Selenium WebDriver` | Заголовок страницы результатов |
+| `Java 21` | Заголовок страницы результатов |
+| `JUnit 5` | Заголовок страницы результатов |
+
+Подход: ввод текста → отправка формы → ожидание загрузки → валидация.
+
+### 🧭 NavigationTest.java
+
+Два теста для проверки навигации:
+
+1. **Открытие страницы** — проверка URL и title
+2. **Переход по ссылке** — ожидание кликабельности → клик → проверка URL
+
+### ⏳ WaitsTest.java
+
+Демонстрация двух стратегий ожидания:
+
+- **WebDriverWait** — явное ожидание до 10 секунд (рекомендуемый подход)
+- **FluentWait** — опрос каждые 500ms, игнорирование `NoSuchElementException`
+
+Разница: FluentWait даёт тонкий контроль над частотой опроса и игнорируемыми исключениями.
+
+### 🪟 WindowManagementTest.java
+
+1. **Переключение вкладок** — открытие новой вкладки, `switchTo()`, подсчёт `windowHandles`
+2. **JavaScript** — получение `document.title` через `JavascriptExecutor`
 
 ---
 
@@ -86,10 +121,10 @@ mvn test -Dtest={{TestClassName}}
 
 | Артефакт | Версия | Назначение |
 |---|---|---|
-| `selenium-java` | {{SELENIUM_VER}} | Управление браузером |
-| `junit-jupiter` | {{JUNIT_VER}} | Тестовый фреймворк |
-| `webdrivermanager` | {{WDM_VER}} | Авто-управление драйверами |
-| `maven-surefire-plugin` | {{SUREFIRE_VER}} | Запуск тестов |
+| `selenium-java` | 4.44.0 | Управление браузером |
+| `junit-jupiter` | 5.14.4 | Тестовый фреймворк |
+| `webdrivermanager` | 6.3.4 | Авто-управление драйверами |
+| `maven-surefire-plugin` | 3.5.6 | Запуск тестов |
 
 ---
 
@@ -107,7 +142,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-java@v4
         with:
-          java-version: {{JAVA_VER}}
+          java-version: 21
           distribution: temurin
       - run: mvn clean test
 ```
@@ -126,5 +161,5 @@ jobs:
 ---
 
 <div align="center">
-  <sub>{{FOOTER}}</sub>
+  <sub>Сделано с ❤️ для изучения автоматизации тестирования</sub>
 </div>
