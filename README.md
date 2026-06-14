@@ -6,8 +6,8 @@
   <p>Современный пример автоматизированного тестирования веб-приложений</p>
 
   [![Java](https://img.shields.io/badge/Java-21-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)](https://adoptium.net/)
-  [![Selenium](https://img.shields.io/badge/Selenium-4.30-43B02A?style=for-the-badge&logo=selenium&logoColor=white)](https://www.selenium.dev/)
-  [![JUnit](https://img.shields.io/badge/JUnit-5.12.1-25A162?style=for-the-badge&logo=junit5&logoColor=white)](https://junit.org/junit5/)
+  [![Selenium](https://img.shields.io/badge/Selenium-4.44-43B02A?style=for-the-badge&logo=selenium&logoColor=white)](https://www.selenium.dev/)
+  [![JUnit](https://img.shields.io/badge/JUnit-5.14.4-25A162?style=for-the-badge&logo=junit5&logoColor=white)](https://junit.org/junit5/)
   [![Maven](https://img.shields.io/badge/Maven-3.8-C71A36?style=for-the-badge&logo=apachemaven&logoColor=white)](https://maven.apache.org/)
   [![License](https://img.shields.io/badge/License-MIT-303030?style=for-the-badge&logo=opensourceinitiative&logoColor=white)](LICENSE)
 
@@ -123,10 +123,10 @@ selenium-java-test/
 
 | Артефакт | Версия | Назначение |
 |---|---|---|
-| `selenium-java` | 4.30.0 | Управление браузером |
-| `junit-jupiter` | 5.12.1 | Тестовый фреймворк |
-| `webdrivermanager` | 5.9.2 | Авто-управление драйверами |
-| `maven-surefire-plugin` | 3.5.2 | Запуск тестов |
+| `selenium-java` | 4.44.0 | Управление браузером |
+| `junit-jupiter` | 5.14.4 | Тестовый фреймворк |
+| `webdrivermanager` | 6.3.4 | Авто-управление драйверами |
+| `maven-surefire-plugin` | 3.5.6 | Запуск тестов |
 
 ---
 
