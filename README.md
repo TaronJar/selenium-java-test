@@ -7,7 +7,7 @@
 
   [![Java](https://img.shields.io/badge/Java-21-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)](https://adoptium.net/)
   [![Selenium](https://img.shields.io/badge/Selenium-4.30-43B02A?style=for-the-badge&logo=selenium&logoColor=white)](https://www.selenium.dev/)
-  [![JUnit](https://img.shields.io/badge/JUnit-5.12-25A162?style=for-the-badge&logo=junit5&logoColor=white)](https://junit.org/junit5/)
+  [![JUnit](https://img.shields.io/badge/JUnit-5.12.1-25A162?style=for-the-badge&logo=junit5&logoColor=white)](https://junit.org/junit5/)
   [![Maven](https://img.shields.io/badge/Maven-3.8-C71A36?style=for-the-badge&logo=apachemaven&logoColor=white)](https://maven.apache.org/)
   [![License](https://img.shields.io/badge/License-MIT-303030?style=for-the-badge&logo=opensourceinitiative&logoColor=white)](LICENSE)
 
