@@ -32,8 +32,9 @@
 ### Предварительные требования
 
 - ☕ **Java 21** или выше — [скачать](https://adoptium.net/)
-- 📦 **Maven 3.8+** — [скачать](https://maven.apache.org/download.cgi)
 - 🌐 **Google Chrome** — [скачать](https://www.google.com/chrome/)
+- 📦 **Maven 3.8+** — нужен только если запускаешь через терминал вручную.  
+  В IntelliJ IDEA Maven уже встроен. [Скачать Maven](https://maven.apache.org/download.cgi)
 
 ### Установка и запуск (через терминал)
 
@@ -72,14 +73,9 @@ mvn test -Dtest=NavigationTest
 2. Скачать **JDK 21 (LTS)** для своей ОС
 3. Установить
 
-### Шаг 3. Установить Maven
+### Шаг 3. Открыть проект
 
-1. Перейти на [maven.apache.org/download.cgi](https://maven.apache.org/download.cgi)
-2. Скачать **Binary zip archive** (apache-maven-3.9.x-bin.zip)
-3. Распаковать в любую папку (например, `C:\tools\apache-maven`)
-4. Добавить папку `bin` в системную переменную `PATH`
-
-### Шаг 4. Открыть проект
+> Maven устанавливать не нужно — он уже встроен в IntelliJ IDEA.
 
 1. Открыть IntelliJ IDEA
 2. Нажать **File → New → Project from Version Control**
@@ -87,7 +83,7 @@ mvn test -Dtest=NavigationTest
 4. Нажать **Clone**
 5. IDEA сама обнаружит Maven-проект и скачает все зависимости (подождать)
 
-### Шаг 5. Запустить тест
+### Шаг 4. Запустить тест
 
 **Вариант A — через IDE:**
 - Открыть `src/test/java/org/testing/selenium/NavigationTest.java`
@@ -109,7 +105,9 @@ mvn test -Dtest=NavigationTest
 1. Перейти на [code.visualstudio.com](https://code.visualstudio.com/)
 2. Скачать и установить
 
-### Шаг 2. Установить Java 21 и Maven (как в инструкции выше)
+### Шаг 2. Установить Java 21
+
+Скачать и установить JDK 21 c [adoptium.net](https://adoptium.net/)
 
 ### Шаг 3. Установить расширения
 
@@ -117,6 +115,9 @@ mvn test -Dtest=NavigationTest
 
 - **Extension Pack for Java** (Microsoft) — всё для Java
 - **Maven for Java** (Microsoft) — поддержка Maven
+
+> Maven должен быть установлен отдельно (см. раздел «Предварительные требования»).  
+> VS Code использует системный Maven из PATH.
 
 ### Шаг 4. Открыть проект
 
