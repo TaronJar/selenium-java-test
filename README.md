@@ -5,7 +5,7 @@
   <h1>Selenium Java Test</h1>
   <p>Современный пример автоматизированного тестирования веб-приложений</p>
 
-  [![Java](https://img.shields.io/badge/Java-17-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)](https://adoptium.net/)
+  [![Java](https://img.shields.io/badge/Java-21-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)](https://adoptium.net/)
   [![Selenium](https://img.shields.io/badge/Selenium-4.30-43B02A?style=for-the-badge&logo=selenium&logoColor=white)](https://www.selenium.dev/)
   [![JUnit](https://img.shields.io/badge/JUnit-5.12-25A162?style=for-the-badge&logo=junit5&logoColor=white)](https://junit.org/junit5/)
   [![Maven](https://img.shields.io/badge/Maven-3.8-C71A36?style=for-the-badge&logo=apachemaven&logoColor=white)](https://maven.apache.org/)
@@ -17,7 +17,7 @@
 ## О проекте
 
 Учебный проект, демонстрирующий современные подходы к автоматизации тестирования.  
-Написан на **Java 17** с использованием **Selenium WebDriver**, **JUnit 5** и **WebDriverManager**.
+Написан на **Java 21 LTS** с использованием **Selenium WebDriver**, **JUnit 5** и **WebDriverManager**.
 
 ### Возможности
 
@@ -33,7 +33,7 @@
 
 ### Предварительные требования
 
-- ☕ **Java 17** или выше — [скачать](https://adoptium.net/)
+- ☕ **Java 21** или выше — [скачать](https://adoptium.net/)
 - 📦 **Maven 3.8+** — [скачать](https://maven.apache.org/download.cgi)
 - 🌐 **Google Chrome** — последняя стабильная версия
 
@@ -91,7 +91,7 @@ selenium-java-test/
 | Запрос | Что проверяется |
 |---|---|
 | `Selenium WebDriver` | Заголовок страницы результатов |
-| `Java 17` | Заголовок страницы результатов |
+| `Java 21` | Заголовок страницы результатов |
 | `JUnit 5` | Заголовок страницы результатов |
 
 Подход: ввод текста → отправка формы → ожидание загрузки → валидация.
@@ -144,7 +144,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-java@v4
         with:
-          java-version: 17
+          java-version: 21
           distribution: temurin
       - run: mvn clean test
 ```
